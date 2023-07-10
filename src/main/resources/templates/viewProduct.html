@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/viewproduct.css}">
+    <link rel="shortcut icon" th:href="@{/images/logo.png}">
+    <link href="https://fonts.googleapis.com/css2?family= Poppins &display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Document</title>
+</head>
+<body>
+<nav>
+    <div class="logo">
+        <h1>Shuz</h1>
+    </div>
+
+    <ul class="menu">
+        <li><a th:href="@{/}">Home</a></li>
+    </ul>
+
+    <div class="icons">
+        <a href="#"><i class="fa-solid fa-heart"></i></a>
+        <a th:href="@{/myCart}"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="#login"><i class="fa-solid fa-user"></i></a>
+    </div>
+
+</nav>
+
+<div class="wrapper">
+
+    <div class="container">
+
+        <div class="img">
+            <img th:src="@{${'/productImages/' + product.imageName}}" alt="shoes">
+        </div>
+        <div class="product-detail">
+            <h2 th:text="${product.name}"></h2>
+            <p th:text="${product.category.name}"></p>
+            <h2>₹ <span th:text="${product.price}"></span></h2>
+            <p th:text="${product.description}"></p>
+            <form th:action="@{/add-to-cart/{product_id}(product_id = ${product.id})}" method="post">
+                <input type="submit" class="btn" value="Add to cart">
+            </form>
+        </div>
+
+    </div></div>
+</body>
+</html>

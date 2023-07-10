@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Title</title>
+
+</head>
+<body>
+
+<section class="vh-100" style="background-color: #35558a;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100 text-center">
+      <div class="col">
+        <div class="card m-auto " style="width:600px;" >
+              <div class="modal-body text-start text-black p-4">
+                <h4 class="mb-5" style="color: #35558a;">Thanks for your order</h4>
+                <p class="mb-0" style="color: #35558a;"></p>Order Review
+                <hr class="mt-2 mb-4"
+                    style="height: 0; background-color: transparent; opacity: .75; border-top: 2px dashed #9e9e9e;">
+
+                <div class="d-flex justify-content-between" >
+                  <p class="fw-bold mb-0">Ether Chair</p>
+                  <p class="text-muted mb-0">$1750.00</p>
+                </div>
+                <div th:each="detail: ${shipmentDetails}">
+                <div class="d-flex justify-content-between">
+                  <p class="fw-bold mb-0">Address</p>
+                  <p class="text-muted mb-0" th:text="${detail.address}">$1750.00</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="fw-bold mb-0">City</p>
+                  <p class="text-muted mb-0" th:text="${detail.city}">$1750.00</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="fw-bold mb-0">Phone No</p>
+                  <p class="text-muted mb-0" th:text="${detail.phone}">$1750.00</p>
+                </div>
+
+                </div>
+
+              </div>
+              <div class="modal-footer d-flex justify-content-center border-top-0 py-4">
+                <a th:href="@{/}"><button type="button" class="btn btn-primary btn-lg mb-1" style="background-color: #35558a;">
+                  return home
+                </button></a>
+              </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

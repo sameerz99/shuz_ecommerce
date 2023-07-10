@@ -1,0 +1,111 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    height: 100vh;
+
+}
+.wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 71px;
+}
+
+ nav .logo{
+    font-size: 35px;
+    color: #c72092;
+    margin: 5px 0;
+    cursor: pointer;
+    position: relative;
+    left: -4%;
+}
+nav .logo span{
+    color: #6c14d0;
+    text-decoration: underline;
+}
+
+ nav ul{
+    list-style: none;
+    text-align: center;
+    padding-right: 15%;
+    font-size: 1.3rem;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 5px 15px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+}
+
+ nav ul li a:hover{
+    color: #c72092;
+}
+
+ nav .icons i{
+    margin: 0 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+ nav .icons i:hover{
+    color: #c72092;
+}
+.icons a{
+    color: black;
+
+}
+
+.container{
+    border: 1px solid black;
+    display: flex;
+    width: 500px;
+    height: 300px;
+    justify-content: space-evenly;
+    box-shadow: 0 0 8px #6c14d0;
+    border-radius: 5px;
+   
+    padding: 10px 20px;
+    background: #f6f6f6;
+}
+.img img{
+    width: 150px;
+    height: 150px;
+    margin-top: 50px;
+}
+.product-detail{
+    width: 55%;
+}
+.btn{
+    text-decoration: none;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #c72092 , #6c14d0);
+    color: white;
+
+}
+form{
+    border:none;
+}
+h1{
+    text-align: center;
+    
+}
