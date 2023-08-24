@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nike - Just Do It</title>
+    <title>Shuz</title>
     <link rel="stylesheet" href="" th:href="@{/css/style.css}">
     <link rel="shortcut icon" href="" th:src="@{/images/logo.png}">
     <link href="https://fonts.googleapis.com/css2?family= Poppins &display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="description" content="Explore a wide range of fashionable shoes at shuz Store. Shop for men, women, and kids shoes, including sneakers, boots, sandals, and more. Enjoy great discounts and fast shipping. Order now!">
+    <meta name="keywords" content="shoes online, buy shoes online, stylish shoes, men's shoes, women's shoes, kids' shoes, sneakers, boots, sandals, affordable shoes, discounted shoes, fast shipping, shuz Store">
+    <meta name="author" content="XYZ Shoes Store">
 </head>
 <body>
 
@@ -81,7 +84,7 @@
                     <div class="products_text">
                         <h2 th:text="${product.name}"></h2>
                         <p th:text="${product.description}"></p>
-                        <h3>₹ <span th:text="${product.price}"></span></h3>
+                        <h3>Rs. <span th:text="${product.price}"></span></h3>
                         <br>
                         <a href="#" th:href="@{/shop/viewproduct/{id}(id=${product.id})}" class="btn">View Product</a>
                     </div>

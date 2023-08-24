@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm</title>
+    <style>
+      *{
+          margin:0;
+          padding:0;
+         }
+       body{
+          height:100vh;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+       }
+       .btn{
+              width:150px;
+              height:50px;
+              background-color:#A1CCD1;
+              border:none;
+           }
+
+    </style>
+</head>
+
+<body>
+<form method="post" th:action="@{/create-order}">
+  <div class="mb-3">
+    <label  class="form-check-label" th:each="detail: ${shipmentDetails}">
+      <input type="hidden" class="form-check-input" name="selectedDetails" th:value="*{detail.id}">
+    </label>
+
+  </div>
+  <button type="submit" class="btn">Confirm</button>
+</form>
+</body>
+</html>

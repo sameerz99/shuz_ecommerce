@@ -25,6 +25,11 @@ public class CheckoutController {
     public String getCheckoutPage(Model model){
         if(miscService.isUserLoggedIn()){
             model.addAttribute("shipmentDetails", shipmentService.getAllShipmentDetails());
+            Integer total= cartService.getTotalCartValueOfUser();
+            model.addAttribute("cartItems", cartService.getAllCartItemsOfUser());
+
+//            model.addAttribute("cartItems",allCartItems);
+            model.addAttribute("totalPrice", total);
             return "checkout";
         }else{
             return "redirect:/login";

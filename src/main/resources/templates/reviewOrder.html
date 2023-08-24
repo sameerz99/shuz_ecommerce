@@ -17,27 +17,11 @@
         <div class="card m-auto " style="width:600px;" >
               <div class="modal-body text-start text-black p-4">
                 <h4 class="mb-5" style="color: #35558a;">Thanks for your order</h4>
-                <p class="mb-0" style="color: #35558a;"></p>Order Review
+
                 <hr class="mt-2 mb-4"
                     style="height: 0; background-color: transparent; opacity: .75; border-top: 2px dashed #9e9e9e;">
 
-                <div class="d-flex justify-content-between" >
-                  <p class="fw-bold mb-0">Ether Chair</p>
-                  <p class="text-muted mb-0">$1750.00</p>
-                </div>
-                <div th:each="detail: ${shipmentDetails}">
-                <div class="d-flex justify-content-between">
-                  <p class="fw-bold mb-0">Address</p>
-                  <p class="text-muted mb-0" th:text="${detail.address}">$1750.00</p>
-                </div>
-                <div class="d-flex justify-content-between">
-                  <p class="fw-bold mb-0">City</p>
-                  <p class="text-muted mb-0" th:text="${detail.city}">$1750.00</p>
-                </div>
-                <div class="d-flex justify-content-between">
-                  <p class="fw-bold mb-0">Phone No</p>
-                  <p class="text-muted mb-0" th:text="${detail.phone}">$1750.00</p>
-                </div>
+
 
                 </div>
 
@@ -46,6 +30,9 @@
                 <a th:href="@{/}"><button type="button" class="btn btn-primary btn-lg mb-1" style="background-color: #35558a;">
                   return home
                 </button></a>
+                  <a th:href="@{/pay}"><button type="button" class="btn btn-primary btn-lg mb-1" style="background-color: #35558a;">
+                      Proceed to payment
+                  </button></a>
               </div>
         </div>
 

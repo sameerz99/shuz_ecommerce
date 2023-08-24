@@ -37,7 +37,6 @@ public class OrderController {
         List<OrderItem> orderItems = orderItemService.generateOrderItems(createdOrder);
         model.addAttribute("shipmentDetails", shipmentService.getAllShipmentDetails());
         model.addAttribute("products",productService.getAllProduct());
-
         //--Send the email to the user
         String subject = "Order Placed Successfully";
 
@@ -57,7 +56,7 @@ public class OrderController {
         emailService.sendEmail(miscService.getLoggedInUser().getEmail(), subject, message);
         System.out.println("Order Done");
         System.out.println(miscService.getLoggedInUser().getEmail());
-        return "reviewOrder";
+        return "success";
     }
 
     @PostMapping("/create-order")
@@ -68,5 +67,20 @@ public class OrderController {
         redirectAttributes.addAttribute("createdOrder", createdOrder);
         return "redirect:/set-order-items";
 
+    }
+    @GetMapping("/pay")
+    public String getPaymentPage(Model model){
+        return "stripe";
+    }
+    @GetMapping("/success")
+    public String getSuccessPage(Model model){
+        model.addAttribute("shipmentDetails", shipmentService.getAllShipmentDetails());
+        return "success";
+    }
+    @GetMapping("/confirm")
+    public String getConfirmPage(Model model)
+    {
+        model.addAttribute("shipmentDetails", shipmentService.getAllShipmentDetails());
+        return "Confirm";
     }
 }

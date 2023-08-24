@@ -45,7 +45,6 @@ background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 
                     <!--            //If there are shipment address-->
                     <div th:if="${shipmentDetails.size!=0}">
                         <!--                The form for shipment info-->
-                        <form method="post" th:action="@{/create-order}">
                             <div class="mb-3">
                                 <label  class="form-check-label" th:each="detail: ${shipmentDetails}">
                                     <input type="hidden" class="form-check-input" name="selectedDetails" th:value="*{detail.id}">
@@ -55,9 +54,11 @@ background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 
                                 </label>
 
                             </div>
-                            <button type="submit" class="btn btn-primary float-right">Place Order</button>
-                        </form>
+
                     </div>
+                    <a th:href="@{/pay}"><button type="button" class="btn btn-primary btn-lg mb-1" style="background-color: #35558a;">
+                        Proceed to payment
+                    </button></a>
                 </div>
             </div>
         </div>
